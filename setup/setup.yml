@@ -1,0 +1,13 @@
+---
+- hosts: webservers
+  environment:
+    - AWS_ACCESS_KEY_ID: "AKIAQAIVTV6STHVMGSHP"
+    - AWS_SECRET_ACCESS_KEY: "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"
+
+  tasks:
+  - name: copy env file
+    copy:
+      src: ~/laravel.pem
+      dest: ~/
+      mode: '0644'
+    become: yes
